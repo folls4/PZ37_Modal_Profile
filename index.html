@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Модальное окно профиля</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="./js/script.js" defer></script>
+  </head>
+  <body>
+    <main class="shell">
+      <div class="grid">
+        <section class="panel wide">
+          <h2>Карточка профиля</h2>
+          <div class="profile">
+            <div class="avatar">П</div>
+            <div>
+              <p class="small">Имя профиля</p>
+              <strong id="profile-name">Посетитель</strong>
+            </div>
+          </div>
+          <button id="open-dialog" class="btn primary">Изменить имя</button>
+          <p id="profile-status" class="status" aria-live="polite">
+            Профиль открыт.
+          </p>
+        </section>
+      </div>
+      <dialog id="profile-dialog" class="modal">
+        <div class="modal-inner">
+          <div class="modal-head">
+            <h2>Изменить имя</h2>
+            <button
+              id="close-dialog"
+              class="close-btn"
+              type="button"
+              aria-label="Закрыть окно"
+            >
+              ×
+            </button>
+          </div>
+          <p class="muted">Введите имя для отображения на странице.</p>
+          <form id="profile-form">
+            <label for="name-input" class="small">Ваше имя</label
+            ><input
+              id="name-input"
+              class="input"
+              maxlength="35"
+              placeholder="Например, Мария"
+            />
+            <p id="dialog-error" class="small" role="alert"></p>
+            <div class="controls" style="margin-top: 20px">
+              <button class="btn primary" type="submit">Сохранить</button>
+            </div>
+          </form>
+        </div>
+      </dialog>
+    </main>
+  </body>
+</html>
